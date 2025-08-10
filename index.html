@@ -276,8 +276,8 @@
    }
 
   .clock {
-    position: fixed;
-    top: 10px;
+   position: fixed;
+    top: 4px;
     right: 10px;
     font-size: 14px;
     background: rgba(255,255,255,0.7);
@@ -287,27 +287,29 @@
  }  
 
    .contact-icons {
-  position: fixed;
-  bottom: 15px;
-  left: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
+ display: none
+}
+      
+.contact-icons a {
+    display: none
 }
 
    #resume {
-    position: fixed;
-    bottom: 15px;
-    right: 10px;
-    z-index: 1000;
-    padding: 10px 14px;
-    font-size: 15px;
-    border-radius: 6px;
-    background: #007bff;
-    color: white;
-    text-align: center;
-   }
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  width: auto;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+}
    #darkToggle, .ai-chat-icon {
     position: fixed;
     right: 10px;
@@ -316,9 +318,9 @@
 
   #darkToggle {
     position: fixed;
-    bottom: 70px;
+    bottom: 65px;
     right: 10px;
-    z-index: 1000;
+    z-index: 1001;
     border-radius: 50%;
     padding: 8px;
     background: white;
@@ -326,14 +328,7 @@
   }
 
   .ai-chat-icon {
-    position: fixed;
-    bottom: 130px;
-    right: 10px;
-    z-index: 1000;
-    border-radius: 50%;
-    padding: 8px;
-    background: white;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+    display: none
   }
       
    .pdf-links {
@@ -376,9 +371,19 @@
   </div>
 
   <a id="resume" href="javascript:void(0);" onclick="togglePDFs()">
-    <i class="fas fa-download"></i> <span style="pointer-events: none;">Download 12th PYQs</span>
+    <i class="fas fa-download"></i> <span style="pointer-events: none;">Download 12th Study Resources</span>
   </a>
   <div class="pdf-links" id="pdfSection">
+  <h3 class="section-head" style="background: linear-gradient(135deg, #8e2de2, #4a00e0, #ff416c);">📚 PCM Books Hindi Medium - NCERT</h3>
+<ul>
+  <li><a href="pdfs/Mathematics Part 1 Book.pdf" onclick="notifyDownload(this)">📕 Mathematics Part - 1</a></li>
+  <li><a href="pdfs/Mathematics Part 2 Book.pdf" onclick="notifyDownload(this)">📙 Mathematics Part - 2</a></li>
+  <li><a href="pdfs/Physics Part 1 Book.pdf" onclick="notifyDownload(this)">📗 Physics Part - 1</a></li>
+  <li><a href="pdfs/Physics Part 2 Book.pdf" onclick="notifyDownload(this)">📘 Physics part - 2</a></li>
+  <li><a href="pdfs/Chemistry Part 1 Book.pdf" onclick="notifyDownload(this)">📙 Chemistry Part - 1</a></li>
+  <li><a href="pdfs/Chemistry Part 2 Book.pdf" onclick="notifyDownload(this)">📔 Chemistry Part - 2</a></li>
+ </ul>
+    <ul><li><span class="typewriter">Upload Date - 9 August 2025</span></li></ul>
     <h3 class="section-head blue">📘 UP Board 2025 PYQs</h3>
     <ul>
       <li><a href="pdfs/Physics 7 sets 2025 PYQs UP board merged.pdf" onclick="notifyDownload(this)">📄 Physics PYQs</a></li>
@@ -387,7 +392,7 @@
       <li><a href="pdfs/G Hindi 7 sets PYQs UP board merged.pdf" onclick="notifyDownload(this)">📄 General Hindi PYQs</a></li>
       <li><a href="pdfs/English 8 sets 2025 PYQs UP board merged.pdf" onclick="notifyDownload(this)">📄 English PYQs</a></li>
     </ul>
-
+    <ul><li><span class="typewriter">Upload Date - 1 August 2025</span></li></ul>
     <h3 class="section-head green">📙 UP Board 2024 PYQs</h3>
     <ul>
       <li>
@@ -409,7 +414,15 @@
 
     <h3 class="section-head red">📕 UP Board 2022 PYQs</h3>
     <ul><li><span class="typewriter">Coming Soon...</span></li></ul>
-
+    <h3 class="section-head" style="background: linear-gradient(135deg, #ff6ec4, #7873f5);">📘 5 Subject Unsolved</h3>
+<ul>
+ <li><a href="pdfs/Physics Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 Physics Unsolved (2025–2022)</a></li>
+  <li><a href="pdfs/Chemistry Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 Chemistry Unsolved (2025–2022)</a></li>
+  <li><a href="pdfs/Mathematics Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 Mathematics Unsolved (2025–2022)</a></li>
+  <li><a href="pdfs/G Hindi Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 General Hindi Unsolved (2025–2022)</a></li>
+  <li><a href="pdfs/English Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 English Unsolved (2025–2022)</a></li>
+</ul>
+    <ul><li><span class="typewriter">Upload Date - 9 August 2025</span></li></ul>
     <h3 class="section-head pink">📑 My Few Short Notes</h3>
 <ul>
   <li>
@@ -422,26 +435,9 @@
       📄 2nd Demo: Physics PYQ Based Short Notes
     </a>
   </li>
-  <li><span class="typewriter">Coming Soon...9th August</span></li>
+  <li><span class="typewriter">Coming Soon...15 August</span></li>
 </ul>
-<h3 class="section-head" style="background: linear-gradient(135deg, #8e2de2, #4a00e0, #ff416c);">📘 5 Subject Unsolved</h3>
-<ul>
- <li><a href="pdfs/Physics Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 Physics Unsolved (2025–2022)</a></li>
-  <li><a href="pdfs/Chemistry Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 Chemistry Unsolved (2025–2022)</a></li>
-  <li><a href="pdfs/Mathematics Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 Mathematics Unsolved (2025–2022)</a></li>
-  <li><a href="pdfs/G Hindi Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 General Hindi Unsolved (2025–2022)</a></li>
-  <li><a href="pdfs/English Unsolved 2025-2022.pdf" onclick="notifyDownload(this)">📄 English Unsolved (2025–2022)</a></li>
-</ul>
-<h3 class="section-head" style="background: linear-gradient(135deg, #ff6ec4, #7873f5);">📚 PCM Books Hindi Medium - NCERT</h3>
-<ul>
-  <li><a href="pdfs/Mathematics Part 1 Book.pdf" onclick="notifyDownload(this)">📕 Mathematics Part - 1</a></li>
-  <li><a href="pdfs/Mathematics Part 2 Book.pdf" onclick="notifyDownload(this)">📙 Mathematics Part - 2</a></li>
-  <li><a href="pdfs/Physics Part 1 Book.pdf" onclick="notifyDownload(this)">📗 Physics Part - 1</a></li>
-  <li><a href="pdfs/Physics Part 2 Book.pdf" onclick="notifyDownload(this)">📘 Physics part - 2</a></li>
-  <li><a href="pdfs/Chemistry Part 1 Book.pdf" onclick="notifyDownload(this)">📙 Chemistry Part - 1</a></li>
-  <li><a href="pdfs/Chemistry Part 2 Book.pdf" onclick="notifyDownload(this)">📔 Chemistry Part - 2</a></li>
- </ul>
-  </div>
+ </div>
   
   <footer>&copy; 2025 Ayush Vishwakarma</footer>
   <button id="darkToggle" onclick="toggleDarkMode()">🌗</button>
@@ -697,7 +693,7 @@
 
   function getBotReply(input) {
     const replies = [
-      "Bhai mai Fake AI hu abhi Ayush bhai mujhe test kr rhe hai"
+      "Hello Bhai - aur kuch chahiye ho to Insta pe message karke ya kisi tarah Ayush bhai se batana"
     ];
     return replies[Math.floor(Math.random() * replies.length)];
   }
