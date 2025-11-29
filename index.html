@@ -711,11 +711,65 @@
     aiMessages.scrollTop = aiMessages.scrollHeight;
   }
 
-  function getBotReply(input) {
-    const replies = [
-      "Dear User,Our website is currently **temporarily closed** for important updates _ It will reopen on **1 March 2026** - Team Web"
-    ];
-    return replies[Math.floor(Math.random() * replies.length)];
+function getBotReply(input) {
+  const msg = input.toLowerCase();
+
+  // Keyword 1: "hello sir"
+  if (msg.includes("hello sir")) {
+    return "🔐 Welcome Admin Sir — Access Granted.\nYou are logged in as Admin.";
+  }
+
+  // Keyword 2: "😁"
+  if (msg.includes("😁")) {
+    return "🎉 Welcome Sir!\nThis website is officially open only for you🧚.";
+  }
+
+  // Keyword 3: Telegram guide
+  if (msg.includes("telegram")) {
+    return [
+      "📩 Telegram par message kaise bheje (step-by-step):",
+      "1) Telegram app kholo (ya Play Store se install karo).",
+      "2) Search bar me '@JoyAyush' type karo.",
+      "3) Profile open karke 'Message' par tap karo.",
+      "4) Apna message likho aur Send kar do.",
+      "",
+      "🔗 Direct link: https://t.me/JoyAyush"
+    ].join("\n");
+  }
+
+  // Keyword 4: Tawk.to support / live chat guide
+  if (
+    msg.includes("tawk") ||
+    msg.includes("support") ||
+    msg.includes("live chat") ||
+    msg.includes("contact admin") ||
+    msg.includes("admin se baat kaise kru") ||
+    msg.includes("helpdesk")
+  ) {
+    return [
+      "🟢 **Live Support (Tawk.to) kaise use kare:**",
+      "",
+      "1) Screen ke bottom-right me ek chat icon dikh raha hoga.",
+      "2) Us icon par click/tap karo.",
+      "3) Chat box open hote hi message type karo.",
+      "4) Agar admin online hoga → turant reply milega.",
+      "5) Agar admin offline hoga → aapka message save ho jayega.",
+      "",
+      "💡 Tip: Apna naam + issue likh dene se reply fast milta hai."
+    ].join("\n");
+  }
+
+  // Keyword 5: Admin Time
+  if (
+    msg.includes("time") ||
+    msg.includes("online") ||
+    msg.includes("aao")
+  ) {
+    return "⏳ Admin Online Time → **9:00 PM – 11:00 PM**.";
+  }
+
+  // Default message
+  return "Dear User,Our website is currently **temporarily closed** for important updates _ It will reopen on **1 March 2026** - Team Web";
   }
 </script>
   <!--Start of Tawk.to Script-->
