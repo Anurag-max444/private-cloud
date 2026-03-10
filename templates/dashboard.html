@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Your Files</h2>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file">
+<button>Upload</button>
+</form>
+
+<div class="files">
+
+{% for file in files %}
+
+<div class="file">
+
+{% if file.endswith('.png') or file.endswith('.jpg') %}
+<img src="/download/{{file}}" width="150">
+{% endif %}
+
+<p>{{file}}</p>
+
+<a href="/download/{{file}}">Download</a>
+<a href="/delete/{{file}}">Delete</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

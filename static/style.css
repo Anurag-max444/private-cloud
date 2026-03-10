@@ -1,0 +1,29 @@
+body{
+background:#111;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+input{
+padding:10px;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:cyan;
+border:none;
+}
+
+.files{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.file{
+border:1px solid white;
+padding:10px;
+margin:10px;
+}
