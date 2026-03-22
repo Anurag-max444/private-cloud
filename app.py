@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session, send_from_directory
-import sqlite3
-import os
+import sqlite3, os
 from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.secret_key = "secretkey"
@@ -51,29 +51,36 @@ def register():
 
     return render_template("register.html")
 
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect("/")
+
 @app.route("/dashboard", methods=["GET","POST"])
 def dashboard():
-
     if "user" not in session:
         return redirect("/")
 
     if request.method == "POST":
         file = request.files["file"]
-
         if file:
-            file.save(os.path.join(UPLOAD_FOLDER,file.filename))
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(UPLOAD_FOLDER, filename))
 
     files = os.listdir(UPLOAD_FOLDER)
-
-    return render_template("dashboard.html",files=files)
+    return render_template("dashboard.html", files=files)
 
 @app.route("/download/<filename>")
 def download(filename):
-    return send_from_directory(UPLOAD_FOLDER,filename)
+    return send_from_directory(UPLOAD_FOLDER, filename)
 
 @app.route("/delete/<filename>")
 def delete(filename):
-    os.remove(os.path.join(UPLOAD_FOLDER,filename))
+    os.remove(os.path.join(UPLOAD_FOLDER, filename))
     return redirect("/dashboard")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 app.run(host="0.0.0.0",port=5000)
