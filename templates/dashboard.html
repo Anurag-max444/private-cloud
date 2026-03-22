@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard</title>
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<h2>Your Files</h2>
+<div class="header">
+<div class="logo">☁️Private Jack Cloud | Developer - Ayush</div>
+<a href="/about" style="margin-right:10px;">👨‍💻 Contact Developer</a>
+<a href="/logout" class="logout">Logout</a>
+</div>
+
+<div class="container">
+<h3>Upload File</h3>
 
 <form method="POST" enctype="multipart/form-data">
-<input type="file" name="file">
+<input type="file" name="file" required>
 <button>Upload</button>
 </form>
+</div>
 
 <div class="files">
-
 {% for file in files %}
-
 <div class="file">
 
 {% if file.endswith('.png') or file.endswith('.jpg') %}
-<img src="/download/{{file}}" width="150">
+<img src="/download/{{file}}">
 {% endif %}
 
 <p>{{file}}</p>
 
-<a href="/download/{{file}}">Download</a>
-<a href="/delete/{{file}}">Delete</a>
-
+<div class="actions">
+<a href="/download/{{file}}" class="download">Download📂</a>
+<a href="/delete/{{file}}" class="delete">Delete🗡</a>
 </div>
 
+</div>
 {% endfor %}
-
 </div>
 
 </body>
