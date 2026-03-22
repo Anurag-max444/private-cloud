@@ -1,29 +1,133 @@
 body{
-background:#111;
-color:white;
-font-family:Arial;
-text-align:center;
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
 }
 
+/* center pages */
+.center-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+/* container */
+.container{
+    width:90%;
+    max-width:400px;
+    padding:25px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* inputs */
 input{
-padding:10px;
-margin:10px;
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    background:#1e293b;
+    color:white;
 }
 
+/* buttons */
 button{
-padding:10px 20px;
-background:cyan;
-border:none;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(45deg,cyan,blue);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
 
+/* header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+}
+
+.logo{
+    color:cyan;
+    font-weight:bold;
+}
+
+.logout{
+    background:red;
+    padding:5px 10px;
+    border-radius:5px;
+    text-decoration:none;
+    color:white;
+}
+
+/* files */
 .files{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    padding:20px;
 }
 
 .file{
-border:1px solid white;
-padding:10px;
-margin:10px;
+    background:#1e293b;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    height:260px;   /* fixed card height */
 }
+
+.file{
+    align-items:center;
+}
+
+.file img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    object-position:center;
+    border-radius:10px;
+}
+
+.file img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px cyan;
+}
+
+.file p{
+    font-size:13px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.actions{
+    margin-top:auto;
+}
+
+.container a{
+    display:inline-block;
+    margin-top:5px;
+    color:cyan;
+}
+.actions a{
+    margin:5px;
+    padding:5px 10px;
+    border-radius:5px;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.download{background:green;color:white;}
+.delete{background:red;color:white;}
